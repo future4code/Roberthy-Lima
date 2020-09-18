@@ -1,0 +1,105 @@
+/* GLOBAL */
+
+* {
+    
+}
+
+.btn {
+    background-color: goldenrod;
+    color: green;
+    border-radius: 5px;
+    text-decoration: none;
+    border-color: green;
+    font-weight: bold;
+    margin: 6px 2px;
+}
+
+.btn:hover {
+    text-decoration: underline;
+    text-decoration-color: black;
+    background-color: green;
+    color: white;
+}
+
+
+#menu {
+    display: block;
+    margin-left: 59vw;
+    text-decoration: none;
+}
+
+#menu .menu-btn {
+    text-decoration: none;
+    color: teal;
+    font-weight: bold;
+    padding: 0px 3px;
+    
+}
+
+#menu .menu-btn:hover {
+    text-decoration: underline;
+}
+
+
+/* INDEX STYLE */
+
+.header {
+    background-color: green;
+    
+}
+
+.header p {
+    color: white;
+    margin-top: 5px;
+}
+
+
+
+
+.main {
+    margin-left: 20vw;
+}
+
+
+
+
+
+#footer {
+    justify-content: center;
+    display: grid;
+    background-color: green;
+    color: white;
+    text-decoration: wavy;
+}   
+
+.socialmedia {
+    justify-content: right;
+    height: 100px;
+
+}
+
+/* CTRL ESTOQUE STLYE */
+
+#estoque .produto-img {
+    width: 100px;
+    height: 100px;
+}
+
+tr {
+    position: relative;
+    background-color: green;
+    color: white;
+}
+
+/* ADD PRODUTO STLYE */
+
+.new-product {
+    
+}
+
+
+/* FUNCIONARIOS STYLE */
+
+li {
+    margin-top: 10px;
+}
