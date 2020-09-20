@@ -1,0 +1,331 @@
+/* GLOBAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Scada', sans-serif;
+    
+}
+
+
+body {
+    background-color:#EFE6EF ;
+    overflow-x: hidden;
+}
+ 
+
+#menu {
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    background-color: #37283E;
+   
+}
+
+#menu ul {
+    margin-left: 400px;
+
+}
+
+#menu li {
+    list-style: none;
+    display: inline-block;
+    line-height: 100px;
+
+    float: left;
+
+    
+}
+
+#menu li:hover {
+    text-decoration: underline;
+}
+
+#menu li a {
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 0px 20px;
+}
+
+
+
+/* INDEX STYLE */
+
+.me {
+    display: inline-block;
+    margin-top: 160px;
+    background-color: #785589;
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.me p {
+    margin-top: 60px;
+    margin-left: 250px;
+    font-size: 28px;
+    color: white;
+
+}
+
+.img-me {
+    position: relative;
+
+    float: right;
+    margin-right: 50px;
+    width: 220px;
+    bottom: 180px;
+
+}
+
+.exp {
+    margin-right: 600px;
+    margin-left: 40%;
+    margin-top: 100px;
+
+    text-align: center;
+
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #B188E7;
+    
+
+    font-size: 30px;
+    font: bold;
+}
+
+#div-exp {
+    background-color: #785589;
+    margin-top: 100px;
+    width: 100%;
+    height: 250px;
+
+    border-radius: 10px;
+
+}
+
+#div-exp p {
+    color: white;
+    font-size: 24px;
+    padding-top: 30px;
+    margin-left: 10px;
+}
+
+.img-hab #hab {
+    background-color: #785589 ;
+    width: 380px;
+    height: 450px;
+
+    border-radius: 20px;
+
+    margin-top:  90px;
+    margin-left: 690px;
+    margin-bottom: 50px;
+
+    
+}
+
+#hab p {
+    padding-left: 10px;
+    padding-top: 10px;
+    color: white;
+    font-size: 24px;
+}
+
+.img-hab {
+
+    margin-top: 50px;    
+    position: static;
+    width: 100%;
+
+    background-color: #37283E;
+
+    display: flex;
+    background-image: url(./img/code-hability.svg);
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+}
+
+.img-hab .hab2 {
+    margin-left: 100px;
+    margin-top: 100px;
+    width: 350px;
+}
+
+
+#works-grid{
+    display: inline-block;
+    padding: 80px;
+    width: 100%;
+
+}
+
+
+#works-grid .work1-img {
+    width: 500px;
+    height: 300px;
+
+}
+
+#works-grid .works-num {
+    display: inline;
+}
+
+#works-grid .work1-img:hover {
+    transition: ease-in;
+    transition-duration: 1s;
+    transform: scale(1.1);
+    
+}
+
+.contact {
+    display: block;
+
+    background-color:#785589 ;
+    width: 80%;
+    height: 500px;
+    margin-left: 10%;
+    margin-top: 80px;
+
+    border-radius: 20px;
+    text-align: center;
+}
+
+.contact #contact-form {
+    padding-top: 50px;
+    
+}
+
+.contact #contact-form .form-control {
+    width: 600px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    color: white;
+    font-size: 24px;
+    padding-top: 50px;
+}
+    
+
+input {
+    height: 45px;
+    
+}
+
+form .submit {
+    background: transparent;
+    border-bottom: 1px solid black;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+    height: 50px;
+    letter-spacing: 2px;
+
+    margin-top: 20px;
+    background: #37283E;
+}
+
+form .submit:hover {
+    background-color: #37285E ;
+    transition-duration: 2s;
+    cursor: pointer;
+}
+
+.footer {
+    padding-top: 60px;
+    margin-top: 100px;
+    background-color: #37283E;
+    width: 100%;
+    height: 200px;
+
+
+    text-align: center;
+    color: #C8C2C2;
+}
+
+.footer .social-media {
+    width: 40px;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.footer .copyright {
+    margin-top: 80px;
+}
+
+/* TRABALHOS STYLE */
+
+div .gallery {
+    background-color: #785589;
+
+    float: left;
+    width: 100%;
+
+  }
+  
+  /* div .gallery:hover {
+   
+  } */
+  
+  .trab-1 {
+      margin-top: 100px;
+    width: 100%;
+    height: auto;
+  }
+   
+  
+  
+  div .desc {
+    background-color: #785589;
+    text-align: center;
+    padding: 50px;
+  }
+  div .desc a {
+      color: gray;
+  }
+
+
+  /* PROJETO LOJA */
+
+  .projeto-1 {
+ 
+    margin-left: 10%;
+    text-align: center;
+
+    padding-top: 200px;
+    background-color: #785589;
+    width: 80%;
+    height: 700px;
+
+    border-radius: 20px;
+  }
+
+  .projeto-1 h2 {
+      color: white;
+  }
+
+  .projeto1-img {
+      padding-bottom: 50px;
+      padding-top: 50px;
+      width: 700px;
+      height: 300px;
+  }
+
+  .projeto-1 p {
+      color: white;
+      font-size: 18px;
+  }
+
+  .projeto-1 a {
+      color: #969090;
+  }
+
+  .projeto-1 a:hover {
+      text-decoration: underline;
+  }
+
