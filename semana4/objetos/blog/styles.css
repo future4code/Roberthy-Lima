@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+#formulario {
+    border: 1px dotted black;
+    padding: 10px;
+    width: 70vw;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+label {
+    width: 10%;
+    text-align: right;
+    padding-right: 10px;
+    margin-bottom: 10px;
+}
+
+input, textarea {
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+button {
+    width: 100px;
+    margin: 0 auto;
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid rgb(77, 77, 77);
+}
+
+#container-de-posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+
+    margin: auto;
+    border-top: 3px double rgb(77, 77, 77);
+
+
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    color: blue;
+    padding: 10px;
+    margin: 20px;
+    border: solid 2px black;
+    border-radius: 5px;
+    
+    height: 40vh;
+    width: 30vw;
+
+}
+
+.author {
+    font-size: 12px;
+}
+
+.content {
+    word-wrap: break-word;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.imagem {
+    width: 30%;
+
+}
+
+
+@media only screen and (max-width: 900px) {
+    #container-de-posts {
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+}
