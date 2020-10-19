@@ -1,0 +1,12 @@
+.card-pequeno {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 5px 0 5px 10px;
+    margin-bottom: 10px;
+
+    text-decoration: none;
+    border: 1px solid black;
+}
