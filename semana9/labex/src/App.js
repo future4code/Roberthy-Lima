@@ -4,7 +4,8 @@ import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Homepage from './components/Homepage'
 import TripDetails from './components/TripDetails'
-import CreateTripPage from './components/CreateTripPage'
+import CreateTripPopUp from './components/CreateTripPopUp'
+import EditTrips from './components/EditTrips'
 import './App.css'
 
 export default function App() {
@@ -21,8 +22,8 @@ export default function App() {
             <TripDetails/>
           </Route>
 
-          <Route exact path='/criar-viagens'>
-            <CreateTripPage/>
+          <Route exact path='/editar-viagens'>
+            <EditTrips/>
           </Route>
 
         </Switch>

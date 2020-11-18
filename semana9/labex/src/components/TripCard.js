@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Button } from './Button'
+import Modal from 'react-modal'
+import './Modal.css'
 
 export default function TripCard() {
+    const [modalIsOpen, setModalIsOpen] = useState(false)
+
     return (
         <CardContainer>
             <h3>Viagem para marte</h3>
@@ -12,7 +16,47 @@ export default function TripCard() {
                 <p>Duração:</p>
                 <p>Duração:</p>
                 <p>Duração:</p>
-                <Button>Aplicar para viagem</Button>
+                <Button onClick={() => setModalIsOpen(!modalIsOpen)}>Aplicar para viagem</Button>
+
+                <Modal
+                        closeTimeoutMS={1500} 
+                        isOpen={modalIsOpen} 
+                        onRequestClose={() => { setModalIsOpen(!modalIsOpen)}}
+                        style={
+                            {    
+                                overlay: {
+                                    background: '23,67,88,0.5',
+                                    
+                                },
+                                content: {
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    background: 'linear-gradient(#2E4057, #151D28)',
+                                    color: 'white',
+                                    margin: 'auto',
+                                    width: '30vw',
+                                }
+                            }
+                            
+                        }>
+                         
+                            <StyledInput placeholder='Nome'/>
+
+                            <StyledInput placeholder='Idade'/>
+
+                            <StyledInput placeholder='Por que deveriamos aceitar você na viagem?'/>
+
+                            <StyledInput placeholder='Profissão'/>
+
+                            <StyledInput placeholder='País'/>
+
+                            <Button>Enviar aplicação</Button>
+                            
+
+
+                        </Modal>
             </TripInfo>
         </CardContainer>
     )
@@ -51,4 +95,15 @@ const TripInfo = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+`
+
+const StyledInput = styled.input`
+    border: none;
+    margin: 1.6rem;
+    width: 100%;
+    height: 5vh;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    border-bottom: 2px solid silver;
 `
