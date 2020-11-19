@@ -6,10 +6,6 @@ export default function TripDetails() {
     return (
         <Container>
             <TripCard/>
-            <TripCard/>
-            <TripCard/>
-            <TripCard/>
-
         </Container>
     )
 }

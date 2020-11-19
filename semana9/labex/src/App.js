@@ -4,7 +4,6 @@ import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import Homepage from './components/Homepage'
 import TripDetails from './components/TripDetails'
-import CreateTripPopUp from './components/CreateTripPopUp'
 import EditTrips from './components/EditTrips'
 import './App.css'
 
