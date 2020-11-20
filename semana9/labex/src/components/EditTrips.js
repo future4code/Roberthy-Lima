@@ -15,6 +15,11 @@ export default function EditTrips() {
     const [duration, setDuration] = useState('');
 
     const [trips, setTrips] = useState([]);
+    const [tripId, setTripId] = useState('');
+    const [tripDetails, setTripDetails] = useState([])
+    const [detailsInfo, setDetailsInfo] = useState(false)
+    const [candidates, setCandidates] = useState([])
+    
 
     const token = localStorage.getItem("token")
 
@@ -58,7 +63,7 @@ export default function EditTrips() {
     }
 
     const getTripDetails = () => {
-        axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/roberthy-lima/trip/:{id}",
+        axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/roberthy-lima/trip/${tripId}`,
         {
             headers: {
                 auth : token
@@ -66,7 +71,9 @@ export default function EditTrips() {
         }
         )
         .then((res) => {
-            console.log(res)
+            setTripDetails(res.data)
+            setCandidates(res.data.trip.candidates)
+            console.log(tripDetails)
         })
     }
 
@@ -104,18 +111,36 @@ export default function EditTrips() {
         })
     }
 
-    const renderedTrips = trips.map((trip) => {
+    const renderedCandidates = candidates.map((candidate) => {
         return (
-            <TripContainer>
-               <h4 key={trip.id}>{trip.name}</h4><Button onClick={getTripDetails} key={trip.id}>Ver detalhes</Button>
-            </TripContainer>
+            <p>Nome: {candidate.name}  Idade: {candidate.age} País: {candidate.country}<br></br>
+            <h5>Texto de aplicação</h5>
+            <p>{candidate.applicationText}</p>
+            </p>
         )
     })
+
+    const renderedTrips = trips.map((trip) => {
+        return (
+            <TripContainer onMouseOver={() => { getTripId(trip.id); getTripDetails(); }}>
+               <h4 key={trip.id}>{trip.name}</h4>
+                {detailsInfo? <Button  onClick={() => { getTripId(trip.id); getTripDetails(); setDetailsInfo(!detailsInfo)}} key={trip.id}>Fechar</Button> :
+                 <Button onMouseOver={() => { getTripId(trip.id); getTripDetails(); }}  onClick={() => { getTripId(trip.id); getTripDetails(); setDetailsInfo(!detailsInfo)}} key={trip.id}>Ver detalhes</Button>}
+            </TripContainer>
+            
+        )
+    })
+
+    const getTripId = (key) => {
+        if (detailsInfo === false) {
+            setTripId (key)
+        } else {
+        }
+    }
     
     return (
 
         <Container>
-            <h2>Lista de viagens</h2>
             <Button onClick={() => setModalIsOpen(!modalIsOpen)} style={{color : "blue", border : "1px solid blue"}}>Criar nova viagem</Button>
 
             <Modal
@@ -168,6 +193,21 @@ export default function EditTrips() {
                 {renderedTrips}
            </TripList>
 
+                {detailsInfo?
+                <TripDetailsContainer>
+                    <h3>Detalhes da viagem</h3>
+                    <p>Nome: {tripDetails.trip.name}</p>
+                    <p>Planeta: {tripDetails.trip.planet}</p>
+                    <p>Data: {tripDetails.trip.date}</p>
+                    <p>Duração: {tripDetails.trip.durationInDays} Dias</p>
+                    <p>Desrição: {tripDetails.trip.description}</p>
+                    <h4>Lista de candidatos:</h4>
+                    {renderedCandidates}
+                </TripDetailsContainer>
+               
+                :
+                <p></p>    
+            }
         </Container>
     )
 }
@@ -177,9 +217,11 @@ const Container = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     &:hover {
         cursor: default;
+    }
+    h2 {
+        margin: 1.1rem;
     }
     Button {
         &:hover{
@@ -222,6 +264,13 @@ const TripContainer = styled.div `
         }
     }
 
+`
+
+const TripDetailsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 1.1rem;
 `
 
 const StyledInput = styled.input`

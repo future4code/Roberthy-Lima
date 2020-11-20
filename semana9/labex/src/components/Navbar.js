@@ -99,7 +99,7 @@ export default function Navbar() {
                 </Button>}
                     
                         <Modal
-                        closeTimeoutMS={1500} 
+                        closeTimeoutMS={600} 
                         isOpen={modalIsOpen} 
                         onRequestClose={() => { setModalIsOpen(!modalIsOpen); setEmail(""); setPassword("")}}
                         style={
