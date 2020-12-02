@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.avatar {
+  width: 400px;
+  height: 400px;
+}
+
+button {
+  margin: 10px;
+}
